@@ -2,6 +2,7 @@ import { useState } from "react";
 import twitterimg from "../../image/twitter.jpeg";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth'
+import './Login.css'
 
 function Signup() {
     const [email, setEmail] = useState('')
