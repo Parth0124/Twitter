@@ -40,7 +40,7 @@ function TweetBox() {
         e.preventDefault();
 
         if (user?.providerData[0]?.providerId === 'password') {
-            fetch(`https://twitter-el5n.onrender.com/loggedInUser?email=${email}`)
+            fetch(`https://twitter-1-yvmk.onrender.com/loggedInUser?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     setName(data[0]?.name);
@@ -69,7 +69,7 @@ function TweetBox() {
 
         console.log('Sending userPost:', userPost);
 
-        fetch('https://twitter-el5n.onrender.com/post', {
+        fetch('https://twitter-1-yvmk.onrender.com/post', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

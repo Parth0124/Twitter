@@ -21,7 +21,7 @@ const MainProfile = ({ user }) => {
   const username = user?.email?.split('@')[0];
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    fetch(`https://twitter-el5n.onrender.com/userpost?email=${user?.email}`)
+    fetch(`https://twitter-1-yvmk.onrender.com/userpost?email=${user?.email}`)
       .then(res => res.json())
       .then(data => {
         setPosts(data);
@@ -47,7 +47,7 @@ const MainProfile = ({ user }) => {
         setIsLoading(false)
 
         if (url) {
-          fetch(`https://twitter-el5n.onrender.com/userUpdates/${user?.email}`, {
+          fetch(`https://twitter-1-yvmk.onrender.com/userUpdates/${user?.email}`, {
             method: "PATCH",
             headers: {
               'content-type': 'application/json'
@@ -86,7 +86,7 @@ const MainProfile = ({ user }) => {
         }
         setIsLoading(false)
         if (url) {
-          fetch(`https://twitter-el5n.onrender.com/userUpdates/${user?.email}`, {
+          fetch(`https://twitter-1-yvmk.onrender.com/userUpdates/${user?.email}`, {
             method: "PATCH",
             headers: {
               'content-type': 'application/json'

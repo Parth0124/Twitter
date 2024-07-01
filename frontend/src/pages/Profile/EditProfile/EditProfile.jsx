@@ -83,7 +83,7 @@ export default function EditProfile({ user, loggedInUser }) {
       dob,
     }
     console.log(editedInfo);
-    fetch(`https://twitter-el5n.onrender.com/userUpdates/${user?.email}`, {
+    fetch(`https://twitter-1-yvmk.onrender.com/userUpdates/${user?.email}`, {
       method: "PATCH",
       headers: {
         'content-type': 'application/json'
