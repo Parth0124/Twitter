@@ -29,7 +29,7 @@ async function run() {
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
         app.get('/post', async (req, res) => {
-            const post = await postCollection.find().toArray();
+            const post = (await postCollection.find().toArray()).reverse();
             res.send(post);
         })
 
