@@ -1,3 +1,5 @@
+import '../../Page.css'
+
 function Notification() {
   return (
     <div className="page">

@@ -1,3 +1,5 @@
+import '../../Page.css'
+
 function Explore() {
   return (
     <div className="page">

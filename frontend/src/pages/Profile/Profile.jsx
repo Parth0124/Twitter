@@ -1,3 +1,5 @@
+import '../../Page.css'
+
 function Profile() {
   return (
     <div className="page">

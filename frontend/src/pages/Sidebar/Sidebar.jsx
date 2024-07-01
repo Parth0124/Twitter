@@ -11,6 +11,8 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Avatar, Button, IconButton, Menu, MenuItem } from "@mui/material";
 import { useState } from "react";
+import { Link } from 'react-router-dom'
+import CustomeLink from "./CustomeLink";
 
 function Sidebar() {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -28,15 +30,30 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <TwitterIcon className="sidebar__twitterIcon" />
-      <SidebarOptions active Icon={HomeIcon} text="Home" />
-      <SidebarOptions Icon={SearchIcon} text="Explore" />
-      <SidebarOptions Icon={NotificationsIcon} text="Notifications" />
-      <SidebarOptions Icon={MailOutlineIcon} text="Messages" />
-      <SidebarOptions Icon={BookmarkBorderIcon} text="Bookmarks" />
-      <SidebarOptions Icon={ListAltIcon} text="Lists" />
-      <SidebarOptions Icon={PermIdentityIcon} text="Profile" />
-      <SidebarOptions Icon={MoreHorizIcon} text="More" />
-
+      <CustomeLink to='/home/feed'>
+        <SidebarOptions active Icon={HomeIcon} text="Home" />
+      </CustomeLink>
+      <CustomeLink to='/home/explore'>
+        <SidebarOptions Icon={SearchIcon} text="Explore" />
+      </CustomeLink>
+      <CustomeLink to='/home/notifications'>
+        <SidebarOptions Icon={NotificationsIcon} text="Notifications" />
+      </CustomeLink>
+      <CustomeLink to='/home/messages'>
+        <SidebarOptions Icon={MailOutlineIcon} text="Messages" />
+      </CustomeLink>
+      <CustomeLink to='/home/bookmarks'>
+        <SidebarOptions Icon={BookmarkBorderIcon} text="Bookmarks" />
+      </CustomeLink>
+      <CustomeLink to='/home/lists'>
+        <SidebarOptions Icon={ListAltIcon} text="Lists" />
+      </CustomeLink>
+      <CustomeLink to='/home/profile'>
+        <SidebarOptions Icon={PermIdentityIcon} text="Profile" />
+      </CustomeLink>
+      <CustomeLink to='/home/more'>
+        <SidebarOptions Icon={MoreHorizIcon} text="More" />
+      </CustomeLink>
       <Button variant="outlined" className="sidebar__tweet">
         Tweet
       </Button>

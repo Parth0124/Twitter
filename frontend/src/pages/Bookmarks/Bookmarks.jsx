@@ -1,3 +1,5 @@
+import '../../Page.css'
+
 function Bookmarks() {
   return (
     <div className="page"> 

@@ -19,7 +19,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element= {<ProtectedRoute><Home /></ProtectedRoute>}/>
+          <Route path='/' element= {<ProtectedRoute><Home /></ProtectedRoute>}> 
+            <Route index element={<Feed/>} />
+          </Route>
           <Route path='/home' element= {<ProtectedRoute><Home /></ProtectedRoute>}> 
             <Route path='feed' element= {<Feed />}/>
             <Route path='explore' element= {<Explore />}/>
