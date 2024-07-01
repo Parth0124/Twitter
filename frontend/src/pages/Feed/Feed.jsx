@@ -1,11 +1,19 @@
-import './Feed.css'
+import React, { useEffect, useState } from "react";
+import "./Feed.css";
+import TweetBox from "./TweetBox/TweetBox";
 
 function Feed() {
-  return (
-    <div>
-      <h1>Welcome to feed</h1>
-    </div>
-  )
+    return (
+        <div className="feed">
+            <div className="feed__header">
+                <h2>Home</h2>
+            </div>
+            <TweetBox />
+
+        </div>
+
+    )
+
 }
 
 export default Feed

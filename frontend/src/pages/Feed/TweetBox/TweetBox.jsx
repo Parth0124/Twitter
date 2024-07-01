@@ -103,7 +103,6 @@ function TweetBox() {
                     type="file"
                     id='image'
                     className="imageInput"
-                    onChange={handleUploadImage}
                 />
                 <Button className="tweetBox__tweetButton" type="submit">Tweet</Button>
             </div>
