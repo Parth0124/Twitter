@@ -1,11 +1,13 @@
+import React from 'react'
 import '../../Page.css'
+import MainProfile from './MainProfile/MainProfile'
 
 function Profile() {
-  return (
-    <div className="page">
-        <h2 className="pageTitle">Welcome to your profile!</h2>
-    </div>
-  )
+    return (
+        <div className='profilePage'>
+            <MainProfile  />
+        </div>
+    )
 }
 
 export default Profile

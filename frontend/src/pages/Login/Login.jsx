@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import twitterimg from "../../image/twitter.jpeg";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import GoogleButton from 'react-google-button'
+import GoogleButton from 'react-google-button';
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from "../../firebase.init"; // Assuming this is the correct path
 import { useNavigate, Link } from "react-router-dom";
 import "./Login.css";
@@ -17,23 +17,23 @@ function Login() {
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
 
-  if(user || googleUser) {
-    console.log(user || googleUser);
-    navigate('/');
-  }
+  useEffect(() => {
+    if (user || googleUser) {
+      console.log(user || googleUser);
+      navigate('/');
+    }
+  }, [user, googleUser, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
     signInWithEmailAndPassword(email, password).catch((error) => {
-      // Handle errors here
       setErrorMessage(error.message);
     });
   };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle();
-  }
+  };
 
   return (
     <div className="login-container">

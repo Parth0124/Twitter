@@ -32,23 +32,20 @@ function Signup() {
         }
     }, [user, googleUser, navigate]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        createUserWithEmailAndPassword(email, password)
-            .then(() => {
-                
-            })
-            .catch((error) => {
-                // Handle errors here
-                setErrorMessage(error.message);
-            });
-        const user = {
-            username: username,
-            name: name,
-            email: email
+        try {
+            await createUserWithEmailAndPassword(email, password);
+            const user = {
+                username: username,
+                name: name,
+                email: email
+            };
+            await axios.post(`http://localhost:4000/register`, user);
+        } catch (error) {
+            // Handle errors here
+            setErrorMessage(error.message);
         }
-
-        const {data} = axios.post(`http://localhost:4000/register`, user);
     };
 
     const handleGoogleSignIn = () => {
