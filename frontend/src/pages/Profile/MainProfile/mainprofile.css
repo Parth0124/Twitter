@@ -1,4 +1,4 @@
-.arrow-icon {
+  .arrow-icon {
     margin: 10px;
     cursor: pointer;
   }
@@ -165,4 +165,3 @@
     color: var(--twitter-color);
     cursor: pointer;
   }
-  

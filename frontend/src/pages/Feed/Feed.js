@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
+import Post from "./Post/Post";
 import "./Feed.css";
 import TweetBox from "./TweetBox/TweetBox";
-import Post from "./Post/Post";
 
 function Feed() {
-
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        
+        //fetch('http://localhost:4000/post')
         fetch('http://localhost:4000/post')
             .then(res => res.json())
             .then(data => {
@@ -25,7 +24,6 @@ function Feed() {
             {
                 posts.map(p => <Post key={p._id} p={p} />)
             }
-
         </div>
 
     )

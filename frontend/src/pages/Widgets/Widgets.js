@@ -1,9 +1,6 @@
 import React from "react";
 import "./Widgets.css";
-import {
-  TwitterTimelineEmbed,
-  TwitterTweetEmbed,
-} from "react-twitter-embed";
+import { TwitterTimelineEmbed, TwitterTweetEmbed } from "react-twitter-embed";
 import SearchIcon from "@mui/icons-material/Search";
 
 function Widgets() {
@@ -21,11 +18,25 @@ function Widgets() {
 
         <TwitterTimelineEmbed
           sourceType="profile"
-          screenName="elonmusk"
+          screenName="geeksforgeeks"
           options={{ height: 400 }}
         />
 
+        <br />
 
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName="nasa"
+          options={{ height: 400 }}
+        />
+
+        <br />
+
+        <TwitterTimelineEmbed
+          sourceType="profile"
+          screenName="ChampionsLeague"
+          options={{ height: 400 }}
+        />
       </div>
     </div>
   );
