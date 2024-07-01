@@ -28,7 +28,7 @@ const Signup = () => {
                 email: email,
             }
 
-            fetch('http://localhost:4000/register', {
+            fetch('https://twitter-el5n.onrender.com/register', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'
