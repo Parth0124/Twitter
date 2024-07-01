@@ -38,6 +38,12 @@ async function run() {
             res.send(user);
         })
 
+        app.get('/loggedInUser', async (req, res) => {
+            const email = req.query.email;
+            const user = await userCollection.find({ email: email }).toArray();
+            res.send(user);
+        })
+
         app.post('/post', async (req, res) => {
             const post = req.body;
             const result = await postCollection.insertOne(post);
