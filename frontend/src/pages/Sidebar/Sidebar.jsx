@@ -9,12 +9,13 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import DoneIcon from '@mui/icons-material/Done';
+import Divider from '@mui/material/Divider';
 import { Avatar, Button, IconButton, Menu, MenuItem } from "@mui/material";
 import { useState } from "react";
-import { Link } from 'react-router-dom'
 import CustomeLink from "./CustomeLink";
 
-function Sidebar() {
+function Sidebar({ handleLogout, user  }) {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const openMenu = Boolean(anchorEl);
@@ -87,8 +88,12 @@ function Sidebar() {
               <h4>Parth Abhang</h4>
               <h5>@Parth010504</h5>
             </div>
+            <DoneIcon className="done_icon"/>
           </div>
         </MenuItem>
+        <Divider />
+          <MenuItem onClick={handleClose}>Add an existing account</MenuItem>
+          <MenuItem onClick={handleLogout}>Log out @Parth010504</MenuItem>
       </Menu>
     </div>
   );
